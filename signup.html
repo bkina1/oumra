@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Oumra Prestige</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">OP</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Oumra Prestige</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 transition">Accueil</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">À propos</a>
+                    <a href="reservation.html" class="text-gray-700 hover:text-yellow-600 transition">Réservation</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-yellow-600 transition">Connexion</a>
+                    <a href="signup.html" class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition">S'inscrire</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-yellow-600">Accueil</a>
+                <a href="about.html" class="block text-gray-700 hover:text-yellow-600">À propos</a>
+                <a href="reservation.html" class="block text-gray-700 hover:text-yellow-600">Réservation</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-yellow-600">Contact</a>
+                <a href="login.html" class="block text-gray-700 hover:text-yellow-600">Connexion</a>
+                <a href="signup.html" class="block text-yellow-600 font-semibold">S'inscrire</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Formulaire d'inscription -->
+    <section class="min-h-screen flex items-center justify-center py-20 mt-16 px-6">
+        <div class="max-w-md w-full">
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Créer un compte</h2>
+                    <p class="text-gray-600">Rejoignez la communauté Oumra Prestige</p>
+                </div>
+                
+                <!-- Formulaire -->
+                <div>
+                    <!-- Nom -->
+                    <div class="mb-4">
+                        <label for="nom" class="block text-gray-700 font-semibold mb-2">Nom</label>
+                        <input 
+                            type="text" 
+                            id="nom" 
+                            name="nom" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="Votre nom"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Prénom -->
+                    <div class="mb-4">
+                        <label for="prenom" class="block text-gray-700 font-semibold mb-2">Prénom</label>
+                        <input 
+                            type="text" 
+                            id="prenom" 
+                            name="prenom" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="Votre prénom"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="votre.email@exemple.fr"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Téléphone -->
+                    <div class="mb-4">
+                        <label for="telephone" class="block text-gray-700 font-semibold mb-2">Téléphone</label>
+                        <input 
+                            type="tel" 
+                            id="telephone" 
+                            name="telephone" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="+33 6 12 34 56 78"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Mot de passe -->
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-semibold mb-2">Mot de passe</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="••••••••"
+                            required
+                        >
+                        <p class="text-sm text-gray-500 mt-1">Minimum 8 caractères</p>
+                    </div>
+                    
+                    <!-- Confirmation mot de passe -->
+                    <div class="mb-6">
+                        <label for="confirm_password" class="block text-gray-700 font-semibold mb-2">Confirmer le mot de passe</label>
+                        <input 
+                            type="password" 
+                            id="confirm_password" 
+                            name="confirm_password" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="••••••••"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Conditions -->
+                    <div class="mb-6 flex items-start">
+                        <input 
+                            type="checkbox" 
+                            id="conditions" 
+                            name="conditions" 
+                            class="mt-1 mr-3 w-4 h-4 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            required
+                        >
+                        <label for="conditions" class="text-sm text-gray-600">
+                            J'accepte les <a href="#" class="text-yellow-600 hover:underline">conditions d'utilisation</a> et la <a href="#" class="text-yellow-600 hover:underline">politique de confidentialité</a>
+                        </label>
+                    </div>
+                    
+                    <!-- Bouton d'inscription -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                        onclick="handleSignup(event)"
+                    >
+                        S'inscrire
+                    </button>
+                    
+                    <!-- Lien vers connexion -->
+                    <p class="text-center text-gray-600 mt-6">
+                        Vous avez déjà un compte ? 
+                        <a href="login.html" class="text-yellow-600 hover:underline font-semibold">Se connecter</a>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Informations supplémentaires -->
+            <div class="mt-6 text-center text-gray-600 text-sm">
+                <p>En vous inscrivant, vous rejoignez une communauté de milliers de pèlerins</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Oumra Prestige</h3>
+                    <p class="text-gray-400">Votre partenaire de confiance pour un voyage spirituel inoubliable vers La Mecque.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yellow-500 transition">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-yellow-500 transition">À propos</a></li>
+                        <li><a href="reservation.html" class="text-gray-400 hover:text-yellow-500 transition">Réservation</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-yellow-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 +33 1 23 45 67 89</li>
+                        <li>✉️ contact@oumraprestige.fr</li>
+                        <li>📍 Paris, France</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>📷</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Oumra Prestige. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            // Récupérer les valeurs
+            const nom = document.getElementById('nom').value;
+            const prenom = document.getElementById('prenom').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const conditions = document.getElementById('conditions').checked;
+            
+            // Validation simple
+            if (!nom || !prenom || !email || !telephone || !password) {
+                alert('Veuillez remplir tous les champs');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Les mots de passe ne correspondent pas');
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert('Le mot de passe doit contenir au moins 8 caractères');
+                return;
+            }
+            
+            if (!conditions) {
+                alert('Veuillez accepter les conditions d\'utilisation');
+                return;
+            }
+            
+            // Simulation d'inscription réussie
+            alert('Inscription réussie ! Bienvenue chez Oumra Prestige, ' + prenom + ' ' + nom + ' !');
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+</body>
+</html>

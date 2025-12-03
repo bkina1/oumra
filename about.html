@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Oumra Prestige</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation (identique à index.html) -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">OP</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Oumra Prestige</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 transition">Accueil</a>
+                    <a href="about.html" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">À propos</a>
+                    <a href="reservation.html" class="text-gray-700 hover:text-yellow-600 transition">Réservation</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-yellow-600 transition">Connexion</a>
+                    <a href="signup.html" class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition">S'inscrire</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-yellow-600">Accueil</a>
+                <a href="about.html" class="block text-yellow-600 font-semibold">À propos</a>
+                <a href="reservation.html" class="block text-gray-700 hover:text-yellow-600">Réservation</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-yellow-600">Contact</a>
+                <a href="login.html" class="block text-gray-700 hover:text-yellow-600">Connexion</a>
+                <a href="signup.html" class="block text-yellow-600 font-semibold">S'inscrire</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-32 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">À Propos de Oumra Prestige</h1>
+            <p class="text-xl text-yellow-100">Votre partenaire de confiance depuis plus de 10 ans</p>
+        </div>
+    </section>
+    
+    <!-- Notre Mission -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Notre Mission</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Chez Oumra Prestige, notre mission est d'offrir à chaque pèlerin une expérience spirituelle exceptionnelle et mémorable. Nous nous engageons à faciliter votre voyage vers les lieux saints avec professionnalisme, dévouement et respect.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Depuis notre création, nous avons accompagné des milliers de fidèles dans leur quête spirituelle, en garantissant un service de qualité supérieure et un accompagnement personnalisé à chaque étape du voyage.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Notre équipe d'experts passionnés travaille sans relâche pour que votre Oumra soit un moment de paix, de recueillement et de connexion spirituelle profonde.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&q=80" alt="Kaaba" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nos Valeurs -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Nos Valeurs Fondamentales</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Valeur 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Bienveillance</h3>
+                    <p class="text-gray-600">Nous traitons chaque pèlerin avec respect, compassion et attention particulière à ses besoins.</p>
+                </div>
+                
+                <!-- Valeur 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Excellence</h3>
+                    <p class="text-gray-600">Nous visons la perfection dans chaque détail de nos services pour garantir votre satisfaction totale.</p>
+                </div>
+                
+                <!-- Valeur 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Ponctualité</h3>
+                    <p class="text-gray-600">Nous respectons scrupuleusement les horaires pour que votre voyage se déroule sans stress.</p>
+                </div>
+                
+                <!-- Valeur 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Accompagnement</h3>
+                    <p class="text-gray-600">Des guides expérimentés vous accompagnent et vous conseillent tout au long de votre séjour.</p>
+                </div>
+                
+                <!-- Valeur 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Sécurité</h3>
+                    <p class="text-gray-600">Votre sécurité et votre bien-être sont notre priorité absolue durant tout le voyage.</p>
+                </div>
+                
+                <!-- Valeur 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Transparence</h3>
+                    <p class="text-gray-600">Des tarifs clairs, sans frais cachés, pour une confiance totale dans nos prestations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistiques -->
+    <section class="py-20 bg-gradient-to-r from-yellow-600 to-yellow-500 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold mb-2">10+</div>
+                    <p class="text-yellow-100">Années d'expérience</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">5000+</div>
+                    <p class="text-yellow-100">Pèlerins satisfaits</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">98%</div>
+                    <p class="text-yellow-100">Taux de satisfaction</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">24/7</div>
+                    <p class="text-yellow-100">Support client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">Prêt à commencer votre voyage spirituel ?</h2>
+            <p class="text-xl text-gray-600 mb-8">Rejoignez les milliers de pèlerins qui nous ont fait confiance</p>
+            <a href="reservation.html" class="inline-block bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition">
+                Réserver votre Oumra
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Oumra Prestige</h3>
+                    <p class="text-gray-400">Votre partenaire de confiance pour un voyage spirituel inoubliable vers La Mecque.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yellow-500 transition">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-yellow-500 transition">À propos</a></li>
+                        <li><a href="reservation.html" class="text-gray-400 hover:text-yellow-500 transition">Réservation</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-yellow-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 +33 1 23 45 67 89</li>
+                        <li>✉️ contact@oumraprestige.fr</li>
+                        <li>📍 Paris, France</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>📷</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Oumra Prestige. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    
+</body>
+</html>

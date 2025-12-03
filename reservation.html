@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Oumra Prestige</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">OP</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Oumra Prestige</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 transition">Accueil</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">À propos</a>
+                    <a href="reservation.html" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Réservation</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-yellow-600 transition">Connexion</a>
+                    <a href="signup.html" class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition">S'inscrire</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-yellow-600">Accueil</a>
+                <a href="about.html" class="block text-gray-700 hover:text-yellow-600">À propos</a>
+                <a href="reservation.html" class="block text-yellow-600 font-semibold">Réservation</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-yellow-600">Contact</a>
+                <a href="login.html" class="block text-gray-700 hover:text-yellow-600">Connexion</a>
+                <a href="signup.html" class="block text-yellow-600 font-semibold">S'inscrire</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-20 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Réservez votre Oumra</h1>
+            <p class="text-xl text-yellow-100">Commencez votre voyage spirituel avec nous</p>
+        </div>
+    </section>
+    
+    <!-- Formulaire de réservation -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                
+                <!-- Étape 1: Informations personnelles -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center mr-3">1</span>
+                        Informations personnelles
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nom" class="block text-gray-700 font-semibold mb-2">Nom *</label>
+                            <input 
+                                type="text" 
+                                id="nom" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                placeholder="Votre nom"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="prenom" class="block text-gray-700 font-semibold mb-2">Prénom *</label>
+                            <input 
+                                type="text" 
+                                id="prenom" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                placeholder="Votre prénom"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                placeholder="votre.email@exemple.ne"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="telephone" class="block text-gray-700 font-semibold mb-2">Téléphone *</label>
+                            <input 
+                                type="tel" 
+                                id="telephone" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                placeholder="+227 12 34 56 78"
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Séparateur -->
+                <div class="border-t border-gray-200 my-8"></div>
+                
+                <!-- Étape 2: Détails du voyage -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center mr-3">2</span>
+                        Détails du voyage
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="formule" class="block text-gray-700 font-semibold mb-2">Type de formule *</label>
+                            <select 
+                                id="formule" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                onchange="updatePrice()"
+                                required
+                            >
+                                <option value="">Choisir une formule</option>
+                                <option value="economique" data-price="1500">Économique - 1 500€</option>
+                                <option value="confort" data-price="2500">Confort - 2 500€</option>
+                                <option value="premium" data-price="3500">Premium - 3 500€</option>
+                                <option value="vip" data-price="5000">VIP - 5 000€</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="duree" class="block text-gray-700 font-semibold mb-2">Durée du séjour *</label>
+                            <select 
+                                id="duree" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                required
+                            >
+                                <option value="">Choisir une durée</option>
+                                <option value="7">7 jours</option>
+                                <option value="10">10 jours</option>
+                                <option value="14">14 jours</option>
+                                <option value="21">21 jours</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="date_depart" class="block text-gray-700 font-semibold mb-2">Date de départ *</label>
+                            <input 
+                                type="date" 
+                                id="date_depart" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="nb_personnes" class="block text-gray-700 font-semibold mb-2">Nombre de personnes *</label>
+                            <input 
+                                type="number" 
+                                id="nb_personnes" 
+                                min="1" 
+                                max="20"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                placeholder="1"
+                                value="1"
+                                onchange="updatePrice()"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="aeroport" class="block text-gray-700 font-semibold mb-2">Aéroport de départ *</label>
+                            <select 
+                                id="aeroport" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                required
+                            >
+                                <option value="">Choisir un aéroport</option>
+                                <option value="cdg">Paris Charles de Gaulle (CDG)</option>
+                                <option value="orly">Paris Orly (ORY)</option>
+                                <option value="marseille">Marseille Provence (MRS)</option>
+                                <option value="lyon">Lyon Saint-Exupéry (LYS)</option>
+                                <option value="nice">Nice Côte d'Azur (NCE)</option>
+                                <option value="toulouse">Toulouse Blagnac (TLS)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Séparateur -->
+                <div class="border-t border-gray-200 my-8"></div>
+                
+                <!-- Étape 3: Options supplémentaires -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center mr-3">3</span>
+                        Options supplémentaires
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="visa" 
+                                class="mt-1 mr-3 w-5 h-5 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            >
+                            <div>
+                                <label for="visa" class="font-semibold text-gray-800">Assistance visa</label>
+                                <p class="text-sm text-gray-600">Nous nous occupons de toutes les démarches administratives (+150€)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="assurance" 
+                                class="mt-1 mr-3 w-5 h-5 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            >
+                            <div>
+                                <label for="assurance" class="font-semibold text-gray-800">Assurance voyage</label>
+                                <p class="text-sm text-gray-600">Protection complète pendant votre séjour (+100€)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="guide_prive" 
+                                class="mt-1 mr-3 w-5 h-5 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            >
+                            <div>
+                                <label for="guide_prive" class="font-semibold text-gray-800">Guide privé</label>
+                                <p class="text-sm text-gray-600">Accompagnement personnalisé exclusif (+500€)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="chambre_individuelle" 
+                                class="mt-1 mr-3 w-5 h-5 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            >
+                            <div>
+                                <label for="chambre_individuelle" class="font-semibold text-gray-800">Chambre individuelle</label>
+                                <p class="text-sm text-gray-600">Supplément chambre single (+300€)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Demandes spéciales -->
+                <div class="mb-10">
+                    <label for="demandes" class="block text-gray-700 font-semibold mb-2">Demandes spéciales ou informations complémentaires</label>
+                    <textarea 
+                        id="demandes" 
+                        rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                        placeholder="Allergies alimentaires, besoins médicaux, préférences particulières..."
+                    ></textarea>
+                </div>
+                
+                <!-- Résumé du prix -->
+                <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-xl border-2 border-yellow-200 mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Récapitulatif</h3>
+                    <div class="flex justify-between items-center text-lg">
+                        <span class="text-gray-700">Prix total estimé :</span>
+                        <span id="prix_total" class="text-3xl font-bold text-yellow-600">0€</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">* Prix définitif confirmé après validation</p>
+                </div>
+                
+                <!-- Conditions -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <input 
+                            type="checkbox" 
+                            id="conditions" 
+                            class="mt-1 mr-3 w-5 h-5 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            required
+                        >
+                        <label for="conditions" class="text-sm text-gray-600">
+                            J'accepte les <a href="#" class="text-yellow-600 hover:underline">conditions générales de vente</a> et la <a href="#" class="text-yellow-600 hover:underline">politique de confidentialité</a> *
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Bouton de réservation -->
+                <button 
+                    type="submit" 
+                    class="w-full bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-4 rounded-lg text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition"
+                    onclick="handleReservation(event)"
+                >
+                    Confirmer ma réservation
+                </button>
+                
+                <p class="text-center text-gray-500 text-sm mt-4">
+                    🔒 Paiement sécurisé - Vos données sont protégées
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Oumra Prestige</h3>
+                    <p class="text-gray-400">Votre partenaire de confiance pour un voyage spirituel inoubliable vers La Mecque.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yellow-500 transition">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-yellow-500 transition">À propos</a></li>
+                        <li><a href="reservation.html" class="text-gray-400 hover:text-yellow-500 transition">Réservation</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-yellow-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 +33 1 23 45 67 89</li>
+                        <li>✉️ contact@oumraprestige.fr</li>
+                        <li>📍 Paris, France</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>📷</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Oumra Prestige. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        function updatePrice() {
+            const formuleSelect = document.getElementById('formule');
+            const nbPersonnes = parseInt(document.getElementById('nb_personnes').value) || 1;
+            const selectedOption = formuleSelect.options[formuleSelect.selectedIndex];
+            const basePrice = parseInt(selectedOption.dataset.price) || 0;
+            
+            let total = basePrice * nbPersonnes;
+            
+            // Ajouter les options
+            if (document.getElementById('visa').checked) total += 150 * nbPersonnes;
+            if (document.getElementById('assurance').checked) total += 100 * nbPersonnes;
+            if (document.getElementById('guide_prive').checked) total += 500;
+            if (document.getElementById('chambre_individuelle').checked) total += 300 * nbPersonnes;
+            
+            document.getElementById('prix_total').textContent = total.toLocaleString('fr-FR') + '€';
+        }
+        
+        // Ajouter les event listeners pour mise à jour automatique
+        document.getElementById('visa').addEventListener('change', updatePrice);
+        document.getElementById('assurance').addEventListener('change', updatePrice);
+        document.getElementById('guide_prive').addEventListener('change', updatePrice);
+        document.getElementById('chambre_individuelle').addEventListener('change', updatePrice);
+        
+        function handleReservation(event) {
+            event.preventDefault();
+            
+            const nom = document.getElementById('nom').value;
+            const prenom = document.getElementById('prenom').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const formule = document.getElementById('formule').value;
+            const duree = document.getElementById('duree').value;
+            const dateDepart = document.getElementById('date_depart').value;
+            const nbPersonnes = document.getElementById('nb_personnes').value;
+            const aeroport = document.getElementById('aeroport').value;
+            const conditions = document.getElementById('conditions').checked;
+            
+            // Validation
+            if (!nom || !prenom || !email || !telephone || !formule || !duree || !dateDepart || !nbPersonnes || !aeroport) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            if (!conditions) {
+                alert('Veuillez accepter les conditions générales');
+                return;
+            }
+            
+            // Simulation de réservation réussie
+            alert('🎉 Réservation confirmée !\n\nMerci ' + prenom + ' ' + nom + ' !\n\nVous recevrez un email de confirmation à ' + email + ' avec tous les détails de votre voyage.\n\nNotre équipe vous contactera sous 24h pour finaliser votre réservation.');
+            window.location.href = 'index.html';
+        }
+    </script>
+    
+</body>
+</html>

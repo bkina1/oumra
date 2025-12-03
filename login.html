@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Oumra Prestige</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-bold">OP</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Oumra Prestige</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-yellow-600 transition">Accueil</a>
+                    <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">À propos</a>
+                    <a href="reservation.html" class="text-gray-700 hover:text-yellow-600 transition">Réservation</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-yellow-600 transition">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-4">
+                    <a href="login.html" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Connexion</a>
+                    <a href="signup.html" class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition">S'inscrire</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-yellow-600">Accueil</a>
+                <a href="about.html" class="block text-gray-700 hover:text-yellow-600">À propos</a>
+                <a href="reservation.html" class="block text-gray-700 hover:text-yellow-600">Réservation</a>
+                <a href="contact.html" class="block text-gray-700 hover:text-yellow-600">Contact</a>
+                <a href="login.html" class="block text-yellow-600 font-semibold">Connexion</a>
+                <a href="signup.html" class="block text-gray-700 hover:text-yellow-600">S'inscrire</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Formulaire de connexion -->
+    <section class="min-h-screen flex items-center justify-center py-20 mt-16 px-6">
+        <div class="max-w-md w-full">
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Bon retour !</h2>
+                    <p class="text-gray-600">Connectez-vous à votre compte</p>
+                </div>
+                
+                <!-- Formulaire -->
+                <div>
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="votre.email@exemple.fr"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Mot de passe -->
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-semibold mb-2">Mot de passe</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
+                            placeholder="••••••••"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Options -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center">
+                            <input 
+                                type="checkbox" 
+                                id="remember" 
+                                name="remember" 
+                                class="mr-2 w-4 h-4 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded"
+                            >
+                            <label for="remember" class="text-sm text-gray-600">Se souvenir de moi</label>
+                        </div>
+                        <a href="#" class="text-sm text-yellow-600 hover:underline">Mot de passe oublié ?</a>
+                    </div>
+                    
+                    <!-- Bouton de connexion -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-gradient-to-r from-yellow-600 to-yellow-500 text-white py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition"
+                        onclick="handleLogin(event)"
+                    >
+                        Se connecter
+                    </button>
+                    
+                    <!-- Séparateur -->
+                    <div class="flex items-center my-6">
+                        <div class="flex-1 border-t border-gray-300"></div>
+                        <span class="px-4 text-gray-500 text-sm">OU</span>
+                        <div class="flex-1 border-t border-gray-300"></div>
+                    </div>
+                    
+                    <!-- Connexion sociale -->
+                    <div class="space-y-3">
+                        <button class="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Continuer avec Google
+                        </button>
+                        
+                        <button class="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Continuer avec Facebook
+                        </button>
+                    </div>
+                    
+                    <!-- Lien vers inscription -->
+                    <p class="text-center text-gray-600 mt-6">
+                        Vous n'avez pas de compte ? 
+                        <a href="signup.html" class="text-yellow-600 hover:underline font-semibold">S'inscrire</a>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sécurité -->
+            <div class="mt-6 text-center text-gray-600 text-sm flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <p>Connexion sécurisée et cryptée</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Oumra Prestige</h3>
+                    <p class="text-gray-400">Votre partenaire de confiance pour un voyage spirituel inoubliable vers La Mecque.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yellow-500 transition">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-yellow-500 transition">À propos</a></li>
+                        <li><a href="reservation.html" class="text-gray-400 hover:text-yellow-500 transition">Réservation</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-yellow-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 +33 1 23 45 67 89</li>
+                        <li>✉️ contact@oumraprestige.fr</li>
+                        <li>📍 Paris, France</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <span>📷</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Oumra Prestige. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Veuillez remplir tous les champs');
+                return;
+            }
+            
+            // Simulation de connexion réussie
+            alert('Connexion réussie ! Bienvenue de retour.');
+            window.location.href = 'index.html';
+        }
+    </script>
+    
+</body>
+</html>
