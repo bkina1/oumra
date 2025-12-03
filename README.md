@@ -48,14 +48,6 @@ Le site utilise une palette de couleurs apaisante et prestigieuse :
 - **Google Fonts** : Polices Playfair Display et Lato
 - **Unsplash** : Images haute qualité
 
-## 🎨 Personnalisation
-
-### Modifier les couleurs
-
-Les couleurs principales sont définies dans les classes Tailwind :
-- `yellow-600` / `yellow-500` : Couleur principale (doré)
-- `gray-800` / `gray-900` : Textes et footer
-- `green-600` : Accents verts
 
 
 
